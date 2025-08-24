@@ -11,10 +11,12 @@ FileUtils.chdir APP_ROOT do
   # This script is a way to set up or update your development environment automatically.
   # This script is idempotent, so that you can run it at any time and get an expectable outcome.
   # Add necessary setup steps to this file.
+  bundler_version = ENV.fetch("BUNDLER_VERSION", "2.7.1")
 
-  puts '== Installing dependencies =='
-  system! "bin/web 'gem install bundler -v '#{bundler_version}''"
-  system('bin/bundle check') || system!('bin/bundle install')
+  puts "== Installing dependencies =="
+  system! "gem install bundler -v '#{bundler_version}'"
+  system('bundle check') || system!('bundle install')
+
 
   # puts '\n== Copying sample files =='
   # unless File.exist?('config/database.yml')

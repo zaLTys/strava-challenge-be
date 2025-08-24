@@ -18,7 +18,7 @@ locals {
     # }
   }
   # Must be an exact match to your application name in New Relic
-  app_name             = "rails_api_base"
+  app_name             = "strava-challenge-be"
   app_environments     = ["development", "staging", "production"]
   slack_channel_id     = "your-slack-channel-id"
   slack_destination_id = "your-slack-destination-id"
